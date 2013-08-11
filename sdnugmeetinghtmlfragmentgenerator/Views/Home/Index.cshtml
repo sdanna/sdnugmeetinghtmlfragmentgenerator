@@ -1,4 +1,5 @@
-﻿@{
+﻿@model sdnugmeetinghtmlfragmentgenerator.Models.HtmlFragmentCreateVM
+@{
     ViewBag.Title = "Home Page";
 }
 @section featured {
@@ -11,6 +12,46 @@
     </section>
 }
 <h3>Meeting Information</h3>
+
+@if (!string.IsNullOrWhiteSpace(Model.HtmlFragment))
+{
+    <p>
+        @Model.HtmlFragment
+    </p>
+}
 <p>
-    Content goes here...
+    @using (var form = Html.BeginForm())
+    {
+        <div>
+            <div>@Html.LabelFor(x => x.MeetingDate)</div>
+            <div>@Html.TextBoxFor(x => x.MeetingDate)</div>
+        </div>
+        
+        <div>
+            <div>@Html.LabelFor(x => x.SpeakerName)</div>
+            <div>@Html.TextBoxFor(x => x.SpeakerName)</div>
+        </div>
+        
+        <div>
+            <div>@Html.LabelFor(x => x.SpeakerBio)</div>
+            <div>@Html.TextBoxFor(x => x.SpeakerBio)</div>
+        </div>
+        
+        <div>
+            <div>@Html.LabelFor(x => x.MeetingTopic)</div>
+            <div>@Html.TextBoxFor(x => x.MeetingTopic)</div>
+        </div>
+        
+        <div>
+            <div>@Html.LabelFor(x => x.MeetingTopicSummary)</div>
+            <div>@Html.TextBoxFor(x => x.MeetingTopicSummary)</div>
+        </div>
+        
+        <div>
+            <div>@Html.LabelFor(x => x.RSVPFacebookLink)</div>
+            <div>@Html.TextBoxFor(x => x.RSVPFacebookLink)</div>
+        </div>
+        
+        <input type="submit" value="Generate HTML" />
+    }
 </p>
