@@ -15,9 +15,19 @@
 
 @if (!string.IsNullOrWhiteSpace(Model.HtmlFragment))
 {
-    <p>
-        @Model.HtmlFragment
-    </p>
+    <div id="tabs">
+        <ul>
+            <li><a href="#websiteHtml">Website HTML</a></li>
+            <li><a href="#letterText">Letter Text</a></li>
+        </ul>
+        <div id="websiteHtml">
+            <p>@Model.HtmlFragment</p>        
+        </div>
+        <div id="letterText">
+            <p>// Coming Soon</p>
+        </div>
+    </div>
+    
 }
 <p>
     @using (var form = Html.BeginForm())
@@ -62,6 +72,7 @@
     <script>
         $(function() {
             $('input.datepicker').datepicker();
+            $('#tabs').tabs();
         });
     </script>
 }
