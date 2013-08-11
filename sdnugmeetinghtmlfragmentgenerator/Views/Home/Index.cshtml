@@ -24,7 +24,7 @@
     {
         <div>
             <div>@Html.LabelFor(x => x.MeetingDate)</div>
-            <div>@Html.TextBoxFor(x => x.MeetingDate)</div>
+            <div>@Html.TextBoxFor(x => x.MeetingDate, "{0:MM/dd/yyyy}", new { @class = "datepicker" })</div>
         </div>
         
         <div>
@@ -34,7 +34,7 @@
         
         <div>
             <div>@Html.LabelFor(x => x.SpeakerBio)</div>
-            <div>@Html.TextBoxFor(x => x.SpeakerBio)</div>
+            <div>@Html.TextAreaFor(x => x.SpeakerBio, new { rows = 5 })</div>
         </div>
         
         <div>
@@ -44,7 +44,7 @@
         
         <div>
             <div>@Html.LabelFor(x => x.MeetingTopicSummary)</div>
-            <div>@Html.TextBoxFor(x => x.MeetingTopicSummary)</div>
+            <div>@Html.TextAreaFor(x => x.MeetingTopicSummary, new { rows = 5 })</div>
         </div>
         
         <div>
@@ -55,3 +55,13 @@
         <input type="submit" value="Generate HTML" />
     }
 </p>
+
+@section scripts
+{
+    @Scripts.Render("~/bundles/jqueryui")
+    <script>
+        $(function() {
+            $('input.datepicker').datepicker();
+        });
+    </script>
+}

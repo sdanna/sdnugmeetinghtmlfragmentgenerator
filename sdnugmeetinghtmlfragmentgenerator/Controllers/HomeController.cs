@@ -13,6 +13,7 @@ namespace sdnugmeetinghtmlfragmentgenerator.Controllers
         public ActionResult Index()
         {
             var vm = new HtmlFragmentCreateVM();
+            vm.MeetingDate = Get3rdWednesdayOfCurrentMonth();
             return View(vm);
         }
 
@@ -26,6 +27,17 @@ namespace sdnugmeetinghtmlfragmentgenerator.Controllers
         public string GenerateEvent(HtmlFragmentCreateVM vm)
         {
             return "";
+        }
+
+        public DateTime Get3rdWednesdayOfCurrentMonth()
+        {
+            var thirdWednesday = new DateTime(DateTime.Now.Year, DateTime.Now.Month, 15);
+            while (thirdWednesday.DayOfWeek != DayOfWeek.Wednesday)
+            {
+                thirdWednesday = thirdWednesday.AddDays(1);
+            }
+
+            return thirdWednesday;
         }
 
         private const string HTMLEVENTFORMATTER = @"
