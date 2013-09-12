@@ -33,7 +33,7 @@ namespace sdnugmeetinghtmlfragmentgenerator.Controllers
                                  vm.SpeakerBio,
                                  vm.MeetingTopic,
                                  vm.MeetingTopicSummary,
-                                 CENTENARY_LOCATION,
+                                 COHAB_LOCATION,
                                  vm.RSVPFacebookLink,
                                  DateTime.Now.ToShortDateString());
         }
@@ -69,7 +69,7 @@ namespace sdnugmeetinghtmlfragmentgenerator.Controllers
 		        </div> 
 	        </div><hr />";
 
-        private const string COHAB_LOCATION = @"<p><b>Location:</b> <a href=""http://www.cohabitat.us/shreveport"">CoHabitat</a> - 610 Commerce St., Shreveport, LA  71101<a href=""map.asp"" class=""more"">map</a></p>";
+        private const string COHAB_LOCATION = @"<p><b>Location:</b> <a href=""http://www.cohabitat.us/shreveport"">CoHabitat</a> - 500 CLYDE FANT PARKWAY • SUITE 200, Shreveport, LA  71101<a href=""map.asp"" class=""more"">map</a></p>";
         private const string CENTENARY_LOCATION = @"<p><b>Location:</b> <a href=""http://www.centenary.edu/campusmap"">Centenary College</a> Jackson Hall, Room 211 - 2911 Centenary Boulevard, Shreveport, LA  71104</p>";
     }
 }
